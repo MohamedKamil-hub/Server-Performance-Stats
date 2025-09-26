@@ -1,6 +1,7 @@
 # Server-Performance-Stats
 
 A lightweight Bash script to analyze and display key performance metrics on Linux servers. Perfect for quick diagnostics, monitoring, and troubleshooting resource usage.
+i will be adding new features so it can be more universal, my intend is that this works in the 3 main linux families.
 project URL https://roadmap.sh/projects/server-stats
 Prerequisites
 

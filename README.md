@@ -51,7 +51,9 @@ The script provides the following information:
     Security: Recent failed login attempts (the default is 1 hour) 
 
 
-# Example Output
+## Example Output
+
+\`\`\`
 === Server Performance Stats ===
 Last update: vie 26 sep 2025 15:19:02 CEST
 
@@ -98,3 +100,4 @@ Logged-in Users: user-pc
 2025-09-26T13:08:25.857926+02:00 pc-mint sudo: pam_unix(sudo:auth): conversation failed
 
 === End of Report ===
+\`\`\`

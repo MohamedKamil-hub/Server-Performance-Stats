@@ -21,7 +21,9 @@ A comprehensive bash script for monitoring Linux server performance and system s
 
 # Clone the repository
 git clone https://github.com/MohamedKamil-hub/Server-Performance-Stats
-cd server-stats
+
+
+cd Server-Performance-Stats
 
 # Make the script executable
 chmod +x server-stats.sh

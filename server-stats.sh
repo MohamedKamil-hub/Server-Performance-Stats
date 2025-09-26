@@ -93,3 +93,4 @@ $failed_logs_j
 
 ${PURPLE}=== End of Report ===${NC}
 EOF
+)"

@@ -20,15 +20,15 @@ A comprehensive bash script for monitoring Linux server performance and system s
 
 
 # Clone the repository
-git clone https://github.com/MohamedKamil-hub/Server-Performance-Stats
+    git clone https://github.com/MohamedKamil-hub/Server-Performance-Stats
 
 
 cd Server-Performance-Stats
 
 # Make the script executable
-chmod +x server-stats.sh
+    chmod +x server-stats.sh
 # Run directly
-./server-stats.sh
+    ./server-stats.sh
 
 # Or make it available system-wide
 sudo cp server-stats.sh /usr/local/bin/server-stats

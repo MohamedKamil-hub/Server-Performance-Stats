@@ -3,6 +3,16 @@
 # Author: Mohamed Kamil El Kouarti
 # Last update: Thu Sep 25 2025
 
+# Color codes
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+WHITE='\033[1;37m'
+NC='\033[0m'
+
 # memory USED
 used=$(free -m | awk 'NR==2 { print $3 }')
 
@@ -46,39 +56,40 @@ done)
 
 memory_usage=$(awk "BEGIN {printf \"%.2f\", $used / $total * 100}")
 
-cat <<EOF
-=== Server Performance Stats ===
-Last update: $(date)
+echo -e "$(cat <<EOF
+${CYAN}=== Server Performance Stats ===${NC}
+${BLUE}Last update: $(date)${NC}
 
-=== CPU Usage ===
+${YELLOW}=== CPU Usage ===${NC}
 Total CPU Usage: $total_cpu %
 
-=== Memory Usage ===
+${YELLOW}=== Memory Usage ===${NC}
 Total Memory: $total MB
-Used Memory: $used MB
+Used Memory: $used MB  
 Free Memory: $free_mem MB
 Memory Usage: $memory_usage %
 
-=== Disk Usage ===
+${YELLOW}=== Disk Usage ===${NC}
 Total Disk: $((free_disk + used_disk)) GB
 Used Disk: $used_disk GB
 Free Disk: $free_disk GB
-Disk Usage: $percentage 
+Disk Usage: $percentage %
 
-=== Top 5 Processes by CPU Usage ===
+${YELLOW}=== Top 5 Processes by CPU Usage ===${NC}
 $top_5_cpu
 
-=== Top 5 Processes by Memory Usage ===
+${YELLOW}=== Top 5 Processes by Memory Usage ===${NC}
 $top_5_mem
 
-=== Additional System Information ===
+${YELLOW}=== Additional System Information ===${NC}
 OS : $os_name $os_version
 Uptime: $uptime
 Load Average: $load_average
 Logged-in Users: $users
-Recent Failed Login Attempts:
-$failed_logs_j
-...
 
-=== End of Report ===
+${RED}=== Recent Failed Login Attempts ===${NC}
+$failed_logs_j
+
+${PURPLE}=== End of Report ===${NC}
 EOF
+)"

@@ -13,8 +13,8 @@ A comprehensive bash script for monitoring Linux server performance and system s
 
 ### Prerequisites
 - Linux system (tested on Debian, Ubuntu, Mint, RHEL, CentOS, SUSE)
-- Bash shell
-- Root/sudo access (recommended for full functionality)
+- Bash shell 4.0+
+- Basic system utilities: top, ps, free, df, uptime
 
 ### Installation
 
@@ -30,13 +30,14 @@ cd Server-Performance-Stats
 # Run directly
     ./server-stats.sh
 
-# Or make it available system-wide
-sudo cp server-stats.sh /usr/local/bin/server-stats
-server-stats
+# Also you can make it available system-wide
+    sudo cp server-stats.sh /usr/local/bin/server-stats
+    
+    server-stats
 
 Output Interpretation
 
-The script provides the following information:
+The script provides the following info:
 
     CPU Usage: Total system CPU utilization percentage
 

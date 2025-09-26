@@ -28,6 +28,7 @@ free_mem=$(free -m | awk 'NR==2 {print $4}')
 free_disk=$(LC_NUMERIC=C df -B1 / | awk 'NR==2 {printf "%.2f", $4/1024/1024/1024}')
 used_disk=$(LC_NUMERIC=C df -B1 / | awk 'NR==2 {printf "%.2f", $3/1024/1024/1024}')
 percentage=$(df -h / | awk 'NR==2 {print $5}')
+total_disk=$(LC_NUMERIC=C df -B1 / | awk 'NR==2 {printf "%.2f", $2/1024/1024/1024}')
 
 #TOTAL CPU USAGE 
 total_cpu=$(top -b -n1 | awk '/%Cpu/ {for(i=1;i<=NF;i++) if($i=="id,") {printf "%.2f", 100 - $(i-1)}}')
@@ -70,7 +71,7 @@ Free Memory: $free_mem MB
 Memory Usage: $memory_usage %
 
 ${YELLOW}=== Disk Usage ===${NC}
-Total Disk: $((free_disk + used_disk)) GB
+Total Disk: $total_disk GB
 Used Disk: $used_disk GB
 Free Disk: $free_disk GB
 Disk Usage: $percentage %

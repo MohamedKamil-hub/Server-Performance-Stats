@@ -25,8 +25,8 @@ free_mem=$(free -m | awk 'NR==2 {print $4}')
 #DISK USAGE
 
 #FREE
-free_disk=$(df -h / | awk 'NR==2 {print $4}' | sed 's/G//')
-used_disk=$(df -h / | awk 'NR==2 {print $3}' | sed 's/G//')
+free_disk=$(LC_NUMERIC=C df -B1 / | awk 'NR==2 {printf "%.2f", $4/1024/1024/1024}')
+used_disk=$(LC_NUMERIC=C df -B1 / | awk 'NR==2 {printf "%.2f", $3/1024/1024/1024}')
 percentage=$(df -h / | awk 'NR==2 {print $5}')
 
 #TOTAL CPU USAGE 
@@ -92,4 +92,3 @@ $failed_logs_j
 
 ${PURPLE}=== End of Report ===${NC}
 EOF
-)"
